@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--Responsivo para diferentes dispositivos y dinàmico con js-->
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stilos.css">
+    <title>Document</title>
+</head>
+
+    <!--Los <div> se utilizan para agrupar elementos relacionados, lo que facilita la organización y la estructuración del HTML. 
+    Por ejemplo, podrías usar un <div> para contener un conjunto de elementos que forman la cabecera de una página, como el logo 
+    y el menú de navegación:-->
+
+    <!--<div class="form-group"> El contenedor <div> tiene la clase "form-group", que generalmente se usa para agrupar elementos 
+        relacionados en un formulario, como etiquetas (<label> o <span>) y campos de entrada (<input>).-->
+    <div class="container"><!--El contenedor sirve para estructurar y dar estilo a una sección específica de tu página web. 
+                             Puedes colocar texto, imágenes, formularios, o cualquier otro elemento HTML dentro de este contenedor.-->
+        <div class="title">Registro</div>
+        <form id="form-validation" novalidate ><!--Evita enviar el form antes de ser diligenciado-->
+            <div class="form-group">
+                <span>Nombre</span>
+                <input type="text" placeholder="Ingrese nombre" required>
+                <small>Por favor ingrese nombre</small>
+            </div>
+            
+            <div class="form-group">
+                <span>Usuario</span>
+                <input type="text" placeholder="Ingrese usuario" required>
+                <small>Por favor ingrese usuario</small>
+            </div>
+
+            <div class="form-group">
+                <span>Email</span>
+                <input type="email" placeholder="Ingrese email" required>
+                <small>Por favor ingrese email</small>
+            </div>
+
+            <div class="form-group">
+                <span>Telefóno</span>
+                <input type="number" placeholder="Ingrese telefóno" required>
+                <small>Por favor ingrese telefóno</small>
+            </div>
+
+            <div class="form-group">
+                <span>Contraseña</span>
+                <input type="password" placeholder="Ingrese contraseña" required>
+                <small>Por favor ingrese contraseña</small>
+            </div>
+
+            <div class="form-group">
+                <span>Confirmar contraseña</span>
+                <input type="password" placeholder="Ingrese contraseña" required>
+                <small>Por favor ingrese confirmación</small>
+            </div>
+            
+            <div class="button">
+                <input type="submit" value ="Registrarse">
+            </div>
+
+
+        </form>
+
+    </div>
+<!--type -> Tipo de dato que se espera que ingrese el usuario-->
+<script>
+    const addform = document.getElementById("form-validation");
+    addform.addEventListener("submit", (e) =>{
+       if(addform.checkVisibility()=== false){
+       e.preventDefault();     
+       e.stopPropagation();  
+       addform.classList.add('was-validate');
+       return false;
+    }   
+    });
+</script>
+</body>
+</html>
